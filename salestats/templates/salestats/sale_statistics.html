@@ -1,0 +1,33 @@
+{% extends 'base.html' %} {% block content %}
+<h2>Sale Statistics</h2>
+
+<form method="post">
+  {% csrf_token %} {{ form.as_p }}
+  <button type="submit">Get Statistics</button>
+</form>
+
+{% if sale_statistics_data %}
+<h3>Sales Statistics from {{ start_date }} to {{ end_date }}</h3>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Make</th>
+      <th>Model</th>
+      <th>Year</th>
+      <th>Profit</th>
+      <th>Number of Cars Sold</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in sale_statistics_data %}
+    <tr>
+      <td>{{ row.0 }}</td>
+      <td>{{ row.1 }}</td>
+      <td>{{ row.2 }}</td>
+      <td>${{ row.3 }}</td>
+      <td>{{ row.4 }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endif %} {% endblock %}

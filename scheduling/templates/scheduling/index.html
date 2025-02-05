@@ -1,0 +1,29 @@
+{% extends "base.html" %} {% block content %}
+<h1></h1>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Car Id</th>
+      <th>Mileage</th>
+      <th>Make</th>
+      <th>Model</th>
+      <th>Year</th>
+      <th>Engine Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for c in car %}
+    <tr>
+      <td>
+        <a href="{% url 'cars:detail' c.car_id %}">{{ c.car_id }}</a>
+      </td>
+      <td>{{ c.odometer }}</td>
+      <td>{{ c.vehicle.make }}</td>
+      <td>{{ c.vehicle.model }}</td>
+      <td>{{ c.vehicle.year }}</td>
+      <td>{{ c.vehicle.engine_type}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

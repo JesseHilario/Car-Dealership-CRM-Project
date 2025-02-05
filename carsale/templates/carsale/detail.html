@@ -1,0 +1,27 @@
+{% extends "base.html" %} {% block content %}
+<dl>
+  <dt>Make</dt>
+  <dd>{{ car.vehicle.make }}</dd>
+  <dt>Model</dt>
+  <dd>{{ car.vehicle.model }}</dd>
+  <dt>Year</dt>
+  <dd>{{ car.vehicle.year }}</dd>
+  <dt>Color</dt>
+  <dd>{{ car.color}}</dd>
+  <dt>Car Mileage</dt>
+  <dd>{{ car.odometer }}</dd>
+  <dt>Tire Type</dt>
+  <dd>{{ car.vehicle.tire_type }}</dd>
+  <dt>Engine Type</dt>
+  <dd>{{ car.vehicle.engine_type}}</dd>
+  <dt>Interior</dt>
+  <dd>{{ car.interior}}</dd>
+  <dt>Price</dt>
+  <dd>{{ car.cost}}</dd>
+</dl>
+<div>
+  <a href="{% url 'carsale:purchase' car.car_id %}">Purchase this car!</a
+  ><br /><br />
+  <a href="{% url 'carsale:index' %}">Return to browse menu</a>
+</div>
+{% endblock %}

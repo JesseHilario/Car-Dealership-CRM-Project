@@ -1,0 +1,11 @@
+{% extends "base.html" %} 
+
+{% block content %}
+  <dl>
+    <dt><a href="{% url 'carsale:index' %}">Browse Our Inventory</a></dt>
+    <dd>- See what we have in stock</dd>
+    <dt><a href="{% url 'salestats:sale_statistics' %}">Sales Statistics</a></dt>
+    <dd>- View sales statistics by period</dd>
+  </dl>
+    
+{% endblock %}

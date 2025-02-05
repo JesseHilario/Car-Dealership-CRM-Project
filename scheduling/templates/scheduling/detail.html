@@ -1,0 +1,16 @@
+{% extends "base.html" %} {% block content %}
+<dl>
+  <dt>Make</dt>
+  <dd>{{ car.vehicle.make }}</dd>
+  <dt>Model</dt>
+  <dd>{{ car.vehicle.model }}</dd>
+  <dt>Year</dt>
+  <dd>{{ car.vehicle.year }}</dd>
+  <dt>Car Mileage</dt>
+  <dd>{{ car.odometer }}</dd>
+  <dt>Tire Type</dt>
+  <dd>{{ car.vehicle.tire_type }}</dd>
+  <dt>Engine Type</dt>
+  <dd>{{ car.vehicle.engine_type}}</dd>
+</dl>
+{% endblock %}
